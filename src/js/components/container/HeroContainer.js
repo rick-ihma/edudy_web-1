@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
+import Image from '../presentational/Image.js';
 import Button from '../presentational/button.js';
 
 import '../styles/hero.scss';
-
-
+import logo from '../assets/logo.png';
 
 class Hero extends Component {
 
-    handleTry = (event) => {
-        alert('pass')
+    handleJourney = () => {
+        alert('test')
     }
 
     render(){
@@ -17,9 +19,10 @@ class Hero extends Component {
             <section className="hero is-primary">
                 <div className="hero-body">
                     <div className="container">
-                        <h1 className="title">Boring Dinosaur Education ?</h1>
-                        <h2 className="subtitle">Study in the Education of future</h2>
-                        <Button name="btn-try" value="Try now!" handleClick={this.handleTry} />
+                        <Image source={logo} alt="Edudy Logo" name="hero-logo"/>
+                        <div className="below-logo">
+                            <Button name="journey" handleClick={this.handleJourney} value={["Start journey",<br />,"scroll down",<br /> ,<FontAwesomeIcon icon="arrow-down" size="1x" />]}/>
+                        </div>
                     </div>
                 </div>
             </section>

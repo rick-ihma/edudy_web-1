@@ -1,6 +1,7 @@
 const HTMLWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+
     module: {
         rules: [
             {
@@ -40,7 +41,15 @@ module.exports = {
                       },
                     },
                   ]
-            }
+            },
+            {
+                test:/\.png$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    }
+                ]
+            },
         ]
     },
     plugins: [
